@@ -6,11 +6,9 @@ import java.util.Set;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -20,11 +18,10 @@ public class LibraryEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
-	@Column(name = "Name", nullable = false, length = 50)
+	@Column(nullable = false, length = 50)
 	private String name;
 
-	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-	@JoinColumn(name = "library_id")
+	@OneToMany(mappedBy = "library", cascade = CascadeType.REMOVE)
 	private Set<BookEntity> books = new HashSet<BookEntity>();
 
 	protected LibraryEntity() {
@@ -35,11 +32,11 @@ public class LibraryEntity {
 		this.name = name;
 	}
 
-	public Long getID() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setID(Long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
@@ -47,7 +44,7 @@ public class LibraryEntity {
 		return name;
 	}
 
-	public void putName(String name) {
+	public void setName(String name) {
 		this.name = name;
 	}
 
@@ -55,8 +52,7 @@ public class LibraryEntity {
 		return books;
 	}
 
-	public void putBooks(Set<BookEntity> books) {
+	public void setBooks(Set<BookEntity> books) {
 		this.books = books;
-
 	}
 }
