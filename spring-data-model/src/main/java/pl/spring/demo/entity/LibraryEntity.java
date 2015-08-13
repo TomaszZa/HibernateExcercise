@@ -1,7 +1,7 @@
 package pl.spring.demo.entity;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -22,7 +22,7 @@ public class LibraryEntity {
 	private String name;
 
 	@OneToMany(mappedBy = "library", cascade = CascadeType.REMOVE)
-	private Set<BookEntity> books = new HashSet<BookEntity>();
+	private List<BookEntity> books = new ArrayList<BookEntity>();
 
 	protected LibraryEntity() {
 	}
@@ -48,11 +48,11 @@ public class LibraryEntity {
 		this.name = name;
 	}
 
-	public Set<BookEntity> getBooks() {
+	public List<BookEntity> getBooks() {
 		return books;
 	}
 
-	public void setBooks(Set<BookEntity> books) {
+	public void setBooks(List<BookEntity> books) {
 		this.books = books;
 	}
 }

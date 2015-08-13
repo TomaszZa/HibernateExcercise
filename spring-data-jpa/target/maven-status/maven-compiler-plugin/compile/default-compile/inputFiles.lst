@@ -1,4 +1,13 @@
-C:\projects\prezentation\business_logic_spring_hibernate\spring-data-jpa\src\main\java\pl\spring\demo\mapper\BookMapper.java
-C:\projects\prezentation\business_logic_spring_hibernate\spring-data-jpa\src\main\java\pl\spring\demo\service\BookService.java
-C:\projects\prezentation\business_logic_spring_hibernate\spring-data-jpa\src\main\java\pl\spring\demo\service\impl\BookServiceImpl.java
-C:\projects\prezentation\business_logic_spring_hibernate\spring-data-jpa\src\main\java\pl\spring\demo\repository\BookRepository.java
+C:\Users\tozabloc\Desktop\3 zad Artur\starter-kit\spring-data-jpa\src\main\java\pl\spring\demo\service\impl\BookSearchCryteria.java
+C:\Users\tozabloc\Desktop\3 zad Artur\starter-kit\spring-data-jpa\src\main\java\pl\spring\demo\service\impl\BookServiceImpl.java
+C:\Users\tozabloc\Desktop\3 zad Artur\starter-kit\spring-data-jpa\src\main\java\pl\spring\demo\service\LibraryService.java
+C:\Users\tozabloc\Desktop\3 zad Artur\starter-kit\spring-data-jpa\src\main\java\pl\spring\demo\repository\LibraryRepository.java
+C:\Users\tozabloc\Desktop\3 zad Artur\starter-kit\spring-data-jpa\src\main\java\pl\spring\demo\dao\BookDao.java
+C:\Users\tozabloc\Desktop\3 zad Artur\starter-kit\spring-data-jpa\src\main\java\pl\spring\demo\dao\LibraryDao.java
+C:\Users\tozabloc\Desktop\3 zad Artur\starter-kit\spring-data-jpa\src\main\java\pl\spring\demo\mapper\BookMapper.java
+C:\Users\tozabloc\Desktop\3 zad Artur\starter-kit\spring-data-jpa\src\main\java\pl\spring\demo\dao\Dao.java
+C:\Users\tozabloc\Desktop\3 zad Artur\starter-kit\spring-data-jpa\src\main\java\pl\spring\demo\repository\BookRepository.java
+C:\Users\tozabloc\Desktop\3 zad Artur\starter-kit\spring-data-jpa\src\main\java\pl\spring\demo\dao\impl\BookDaoImpl.java
+C:\Users\tozabloc\Desktop\3 zad Artur\starter-kit\spring-data-jpa\src\main\java\pl\spring\demo\service\BookService.java
+C:\Users\tozabloc\Desktop\3 zad Artur\starter-kit\spring-data-jpa\src\main\java\pl\spring\demo\dao\impl\AbstractDao.java
+C:\Users\tozabloc\Desktop\3 zad Artur\starter-kit\spring-data-jpa\src\main\java\pl\spring\demo\dao\impl\LibraryDaoImpl.java
