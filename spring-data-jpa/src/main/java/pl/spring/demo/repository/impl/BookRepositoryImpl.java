@@ -5,6 +5,9 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
+import org.springframework.util.StringUtils;
+
+import com.mysema.query.BooleanBuilder;
 import com.mysema.query.jpa.JPQLQuery;
 import com.mysema.query.jpa.impl.JPAQuery;
 
@@ -22,12 +25,23 @@ public class BookRepositoryImpl implements MyBookRepository {
 	public List<BookEntity> findBooksByAllCryteria(BookSearchCryteria bookSearchCryteria) {
 		QBookEntity bookEntity = QBookEntity.bookEntity;
 		JPQLQuery query = new JPAQuery(entityManager).from(bookEntity);
-		return query.from(bookEntity)
-				.where(bookEntity.title.eq(bookSearchCryteria.getTitle())
-						.or(bookEntity.authors.any().firstName.eq(bookSearchCryteria.getAuthor()))
-						.or(bookEntity.authors.any().lastName.eq(bookSearchCryteria.getAuthor()))
-						.or(bookEntity.library.name.eq(bookSearchCryteria.getLibraryName())))
-				.listResults(bookEntity).getResults();
+		BooleanBuilder restrictions = new BooleanBuilder();
+
+		if (!StringUtils.isEmpty(bookSearchCryteria.getAuthor())) {
+			restrictions.and(bookEntity.authors.any().firstName.like(bookSearchCryteria.getAuthor() + "%")
+					.or(bookEntity.authors.any().lastName.like(bookSearchCryteria.getAuthor() + "%")));
+		}
+
+		if (!StringUtils.isEmpty(bookSearchCryteria.getTitle())) {
+			restrictions.and(bookEntity.title.like(bookSearchCryteria.getTitle() + "%"));
+		}
+
+		if (!StringUtils.isEmpty(bookSearchCryteria.getLibraryName())) {
+			restrictions.and(bookEntity.library.name.like(bookSearchCryteria.getLibraryName() + "%"));
+		}
+
+		query.where(restrictions);
+		return query.listResults(bookEntity).getResults();
 	}
 
 }
